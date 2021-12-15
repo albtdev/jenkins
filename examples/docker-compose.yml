@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  jenkins:
+    image: albtdev/jenkins:latest
+    container_name: jenkins
+    hostname: jenkins
+    network_mode: bridge
+    ports:
+      - 8080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    environment:
+      TIMEZONE: Asia/Taipei
+    working_dir: /var/jenkins_home
+    restart: always
